@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using DatabaseFirstEFCore.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseFirstEFCore.Controllers
@@ -7,6 +8,7 @@ namespace DatabaseFirstEFCore.Controllers
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [Authorize]
     public class PatientController : Controller
     {
 
@@ -15,10 +17,12 @@ namespace DatabaseFirstEFCore.Controllers
         {
             _patientService = patientService;
         }
+
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> GetPatientDetails() 
         {
-            return View();
+            var response = await _patientService.GetPatientDetails();
+            return Ok(response);
         }
     }
 }

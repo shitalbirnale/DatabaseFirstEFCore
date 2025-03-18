@@ -1,5 +1,9 @@
-﻿using DatabaseFirstEFCore.DBModel;
+﻿using AutoMapper;
+using DatabaseFirstEFCore.DBModel;
+using DatabaseFirstEFCore.Model;
 using DatabaseFirstEFCore.Services.Interfaces;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace DatabaseFirstEFCore.Services.Implementations
 {
@@ -8,9 +12,12 @@ namespace DatabaseFirstEFCore.Services.Implementations
 
         private readonly DbfirstEfcoreContext _appDbContextService;
 
-        public PatientService(DbfirstEfcoreContext applicationContext)
+        private readonly IMapper _mapper;
+
+        public PatientService(DbfirstEfcoreContext applicationContext, IMapper mapper)
         {
             _appDbContextService = applicationContext;
+            _mapper = mapper;
         }
         /// <summary>
         /// GetPatientDetailByEmail
@@ -29,6 +36,24 @@ namespace DatabaseFirstEFCore.Services.Implementations
 
             }
             return Task.FromResult(patientInfo);
+        }
+
+        public Task<List<PatientDetailsResponse>> GetPatientDetails()
+        {
+            List <PatientDetailsResponse> response = new List<PatientDetailsResponse>();
+            try
+            {
+                var patientInfo = _appDbContextService.PatientDetails.ToList();
+                if (patientInfo.Count > 0)
+                {
+                    response = _mapper.Map<List<PatientDetailsResponse>>(patientInfo);
+                }
+            }
+            catch (Exception ex) {
+                throw new Exception("Exception at GetPatientDetails");
+                
+            }
+            return Task.FromResult(response);
         }
     }
 }

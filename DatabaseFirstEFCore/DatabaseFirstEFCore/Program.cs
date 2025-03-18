@@ -1,5 +1,6 @@
 ﻿
 using DatabaseFirstEFCore.DBModel;
+using DatabaseFirstEFCore.Mapping;
 using DatabaseFirstEFCore.Model;
 using DatabaseFirstEFCore.Services.Implementations;
 using DatabaseFirstEFCore.Services.Interfaces;
@@ -104,6 +105,8 @@ namespace DatabaseFirstEFCore
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //register automapper
+            builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
             var app = builder.Build();
 
