@@ -9,9 +9,7 @@ namespace DatabaseFirstEFCore.Services.Implementations
 {
     public class PatientService : IPatientService
     {
-
         private readonly DbfirstEfcoreContext _appDbContextService;
-
         private readonly IMapper _mapper;
 
         public PatientService(DbfirstEfcoreContext applicationContext, IMapper mapper)

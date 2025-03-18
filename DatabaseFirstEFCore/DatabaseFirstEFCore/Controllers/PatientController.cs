@@ -18,7 +18,7 @@ namespace DatabaseFirstEFCore.Controllers
             _patientService = patientService;
         }
 
-        [HttpGet]
+        [HttpGet("GetPatientDetails")]
         public async Task<IActionResult> GetPatientDetails() 
         {
             var response = await _patientService.GetPatientDetails();

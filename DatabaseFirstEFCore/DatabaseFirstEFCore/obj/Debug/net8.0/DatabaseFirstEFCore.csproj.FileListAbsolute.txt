@@ -171,3 +171,6 @@ C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirs
 C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirstEFCore\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
 C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirstEFCore\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
 C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirstEFCore\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirstEFCore\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirstEFCore\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\shita\source\repos\DatabaseFirstEFCore\DatabaseFirstEFCore\DatabaseFirstEFCore\obj\Debug\net8.0\DatabaseFirstEFCore.sourcelink.json
